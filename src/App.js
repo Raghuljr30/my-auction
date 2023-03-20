@@ -1,25 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import { RegisterComp } from './components/authentication/RegisterComp';
+import { LoginComp } from './components/authentication/LoginComp';
+import { AuthProvider } from './context/AuthContext';
+import { NavComp } from './components/authentication/NavComp';
+import {Body} from './components/auctions/Body'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <>
+    <AuthProvider>
+  <NavComp/>
+  <Body/>
+    </AuthProvider>
+  
+  </>
+  
 }
 
 export default App;
